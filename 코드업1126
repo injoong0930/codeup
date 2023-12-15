@@ -1,0 +1,36 @@
+win= list(map(int, input().split()))
+mine= list(map(int, input().split()))
+
+bonus = win[-1]
+win.pop(6)
+
+win.sort()
+mine.sort()
+
+match=0
+bonus_match = 0
+
+for w in win:
+    for m in mine:
+        if w==m:
+            match+=1
+        if m == bonus:
+            bonus_match = 1
+
+if match==6:
+    print(1)
+
+elif match==5 and (bonus_match == 1):
+    print(2)
+
+elif match==5:
+    print(3)          
+
+elif match==4:
+    print(4)
+
+elif match==3:
+    print(5)
+
+elif match<=2:
+    print(0)
